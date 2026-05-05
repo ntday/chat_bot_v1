@@ -454,5 +454,60 @@
   "penalty": {
     "note": "Việc thăm gặp không đúng đối tượng, không đúng thủ tục hoặc lợi dụng thăm gặp để đưa thông tin, vật cấm vào cơ sở giam giữ có thể bị từ chối hoặc xử lý theo quy định nội quy cơ sở giam giữ và pháp luật hiện hành."
   }
+}, 
+{
+  "group": "Trật tự xã hội",
+  "title": "Tội đánh bạc",
+  "content": "Người nào tham gia đánh bạc trái phép dưới bất kỳ hình thức nào được thua bằng tiền hoặc hiện vật thì bị xử lý theo quy định pháp luật. Hành vi đánh bạc có thể thực hiện trực tiếp hoặc thông qua mạng internet, trò chơi điện tử có tính chất ăn thua bằng tiền.",
+  "keywords": [
+    "đánh bạc bị xử lý thế nào",
+    "đánh bạc",
+    "đánh bạc qua mạng",
+    "đá gà mạng",
+    "đá banh",
+    "đá banh mạng",    
+    "tài xỉu",  
+    "tài xỉu mạng",
+    "đánh bài",  
+    "đánh bài qua mạng",  
+    "đánh bài mạng",  
+    "đánh bài",  
+    "lô tô ăn tiền", 
+    "cá độ", 
+    "chơi nổ hủ", 
+    "đánh bạc bị xử lý thế nào",
+    "chơi bài ăn tiền có bị tội không",
+    "đánh bạc bao nhiêu thì bị đi tù",
+    "đánh bài có bị phạt không",
+    "tội đánh bạc bị bao nhiêu năm"
+  ],
+  "law": "Điều 321 Bộ luật Hình sự 2015 (sửa đổi, bổ sung 2017)",
+  "penalty": {
+    "criminal": [
+      { "level": "Khung 1", "detail": "Phạt tiền 20 - 100 triệu hoặc cải tạo không giam giữ đến 3 năm" },
+      { "level": "Khung 2", "detail": "Phạt tù 3 tháng - 7 năm" }
+    ]
+  }
+},
+{
+  "group": "Trật tự xã hội",
+  "title": "Tội tổ chức đánh bạc hoặc gá bạc",
+  "content": "Người nào tổ chức, điều hành hoặc tạo điều kiện cho người khác đánh bạc trái phép dưới mọi hình thức như lập sòng bạc, cho thuê địa điểm hoặc điều hành cá cược thì bị coi là phạm tội.",
+  "keywords": [
+    "tổ chức đánh bạc bị xử lý thế nào",
+    "mở sòng bài bị bao nhiêu năm tù",
+    "gá bạc là gì",
+    "cho người khác đánh bạc có bị tội không",
+    "gá bạc",
+    "tội tổ chức đánh bạc bị phạt gì"
+  ],
+  "law": "Điều 322 Bộ luật Hình sự 2015 (sửa đổi, bổ sung 2017)",
+  "penalty": {
+    "criminal": [
+      { "level": "Khung 1", "detail": "1 - 5 năm tù" },
+      { "level": "Khung 2", "detail": "5 - 10 năm tù" }
+    ]
+  }
 }
+
 ]
