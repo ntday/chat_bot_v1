@@ -1,0 +1,413 @@
+[
+  {
+    "group": "Thân thể",
+    "title": "Giết người",
+    "content": "Tước đoạt trái pháp luật tính mạng người khác.",
+    "keywords": [
+      "giết người bị xử lý thế nào",
+      "tội giết người bị bao nhiêu năm tù",
+      "đâm chết người có bị tử hình không",
+      "giết người có bị chung thân không",
+      "hình phạt tội giết người là gì"
+    ],
+    "law": "Điều 123 Bộ luật Hình sự 2015, sửa đổi, bổ sung năm 2017",
+    "penalty": {
+      "criminal": [
+        { "level": "Khung 1", "detail": "12 - 20 năm, chung thân hoặc tử hình" }
+      ]
+    }
+  },
+  {
+    "group": "Thân thể",
+    "title": "Vô ý làm chết người",
+    "content": "Làm chết người do lỗi vô ý, không mong muốn hậu quả xảy ra.",
+    "keywords": [
+      "vô ý làm chết người bị xử lý thế nào",
+      "tai nạn làm chết người có đi tù không",
+      "vô ý gây chết người bị bao nhiêu năm",
+      "lỡ gây chết người có bị tội không",
+      "hình phạt vô ý làm chết người"
+    ],
+    "law": "Điều 128 Bộ luật Hình sự 2015, sửa đổi, bổ sung năm 2017",
+    "penalty": {
+      "criminal": [
+        { "level": "Khung 1", "detail": "1 - 5 năm tù" },
+        { "level": "Khung 2", "detail": "5 - 12 năm tù" }
+      ]
+    }
+  },
+  {
+    "group": "Thân thể",
+    "title": "Hiếp dâm",
+    "content": "Dùng vũ lực hoặc đe dọa để quan hệ tình dục trái ý muốn.",
+    "keywords": [
+      "hiếp dâm bị xử lý thế nào",
+      "tội hiếp dâm bị bao nhiêu năm tù",
+      "ép quan hệ có bị tội không",
+      "hiếp dâm có bị chung thân không",
+      "hình phạt tội hiếp dâm là gì"
+    ],
+    "law": "Điều 141 Bộ luật Hình sự 2015, sửa đổi, bổ sung năm 2017",
+    "penalty": {
+      "criminal": [
+        { "level": "Khung 1", "detail": "2 - 7 năm tù" },
+        { "level": "Khung 2", "detail": "7 - 15 năm tù" },
+        { "level": "Khung 3", "detail": "12 - 20 năm hoặc chung thân" }
+      ]
+    }
+  },
+  {
+    "group": "Thân thể",
+    "title": "Hiếp dâm trẻ em",
+    "content": "Xâm hại tình dục người dưới 16 tuổi.",
+    "keywords": [
+      "hiếp dâm trẻ em bị xử lý thế nào",
+      "xâm hại trẻ em bị bao nhiêu năm tù",
+      "tội hiếp dâm dưới 16 tuổi xử sao",
+      "hiếp dâm trẻ em có bị chung thân không",
+      "hình phạt xâm hại trẻ em"
+    ],
+    "law": "Điều 142 Bộ luật Hình sự 2015, sửa đổi, bổ sung năm 2017",
+    "penalty": {
+      "criminal": [
+        { "level": "Khung 1", "detail": "7 - 15 năm tù" },
+        { "level": "Khung 2", "detail": "15 - 20 năm hoặc chung thân" }
+      ]
+    }
+  },
+  {
+    "group": "Thân thể",
+    "title": "Cưỡng dâm",
+    "content": "Ép buộc quan hệ tình dục bằng thủ đoạn khác không phải vũ lực trực tiếp.",
+    "keywords": [
+      "cưỡng dâm là gì",
+      "cưỡng dâm bị xử lý thế nào",
+      "ép buộc quan hệ có bị tội không",
+      "tội cưỡng dâm bị bao nhiêu năm",
+      "hình phạt cưỡng dâm"
+    ],
+    "law": "Điều 143 Bộ luật Hình sự 2015, sửa đổi, bổ sung năm 2017",
+    "penalty": {
+      "criminal": [
+        { "level": "Khung 1", "detail": "2 - 7 năm tù" },
+        { "level": "Khung 2", "detail": "7 - 15 năm tù" },
+        { "level": "Khung 3", "detail": "12 - 20 năm hoặc chung thân" }
+      ]
+    }
+  },
+
+  {
+    "group": "Tài sản",
+    "title": "Cướp tài sản",
+    "content": "Dùng vũ lực hoặc đe dọa để chiếm đoạt tài sản.",
+    "keywords": [
+      "cướp tài sản bị xử lý thế nào",
+      "cướp có bị đi tù không",
+      "dùng dao cướp bị bao nhiêu năm",
+      "đe dọa lấy tiền có phải cướp không",
+      "tội cướp tài sản phạt bao nhiêu"
+    ],
+    "law": "Điều 168 Bộ luật Hình sự 2015, sửa đổi, bổ sung năm 2017",
+    "penalty": {
+      "criminal": [
+        { "level": "Khung 1", "detail": "3 - 10 năm tù" },
+        { "level": "Khung 2", "detail": "7 - 15 năm tù" },
+        { "level": "Khung 3", "detail": "12 - 20 năm tù" }
+      ]
+    }
+  },
+  {
+    "group": "Tài sản",
+    "title": "Cướp giật tài sản",
+    "content": "Nhanh chóng chiếm đoạt tài sản rồi tẩu thoát.",
+    "keywords": [
+      "cướp giật bị xử lý thế nào",
+      "giật điện thoại bị bao nhiêu năm",
+      "giật đồ có đi tù không",
+      "cướp giật khác cướp như thế nào",
+      "tội giật đồ bị phạt gì"
+    ],
+    "law": "Điều 171 Bộ luật Hình sự 2015, sửa đổi, bổ sung năm 2017",
+    "penalty": {
+      "criminal": [
+        { "level": "Khung 1", "detail": "1 - 5 năm tù" },
+        { "level": "Khung 2", "detail": "3 - 10 năm tù" },
+        { "level": "Khung 3", "detail": "7 - 15 năm tù" }
+      ]
+    }
+  },
+  {
+    "group": "Tài sản",
+    "title": "Trộm cắp tài sản",
+    "content": "Lén lút chiếm đoạt tài sản của người khác.",
+    "keywords": [
+      "trộm cắp bị xử lý thế nào",
+      "ăn cắp bị bao nhiêu năm tù",
+      "trộm dưới bao nhiêu thì không bị tù",
+      "trộm lần đầu có bị đi tù không",
+      "tội trộm cắp xử lý ra sao"
+    ],
+    "law": "Điều 173 Bộ luật Hình sự 2015, sửa đổi, bổ sung năm 2017",
+    "penalty": {
+      "criminal": [
+        { "level": "Khung 1", "detail": "6 tháng - 3 năm tù" },
+        { "level": "Khung 2", "detail": "2 - 7 năm tù" }
+      ]
+    }
+  },
+  {
+    "group": "Tài sản",
+    "title": "Lừa đảo chiếm đoạt tài sản",
+    "content": "Dùng thủ đoạn gian dối để chiếm đoạt tài sản.",
+    "keywords": [
+      "lừa đảo bị xử lý thế nào",
+      "lừa tiền có bị đi tù không",
+      "lừa đảo qua mạng bị xử sao",
+      "chiếm đoạt tài sản bằng gian dối là gì",
+      "tội lừa đảo bị bao nhiêu năm"
+    ],
+    "law": "Điều 174 Bộ luật Hình sự 2015, sửa đổi, bổ sung năm 2017",
+    "penalty": {
+      "criminal": [
+        { "level": "Khung 1", "detail": "6 tháng - 3 năm tù" },
+        { "level": "Khung 2", "detail": "2 - 7 năm tù" },
+        { "level": "Khung 3", "detail": "7 - 15 năm tù" },
+        { "level": "Khung 4", "detail": "12 - 20 năm hoặc chung thân" }
+      ]
+    }
+  },
+  {
+    "group": "Tài sản",
+    "title": "Lạm dụng tín nhiệm chiếm đoạt tài sản",
+    "content": "Vay mượn hoặc thuê rồi chiếm đoạt tài sản.",
+    "keywords": [
+      "quỵt tiền",
+      "không trả nợ",
+      "mượn tiền không trả có bị tội không",
+      "quỵt tiền bị xử lý thế nào",
+      "lạm dụng tín nhiệm là gì",
+      "vay tiền rồi bỏ trốn có bị tù không",
+      "tội lạm dụng tín nhiệm bị bao nhiêu năm"
+    ],
+    "law": "Điều 175 Bộ luật Hình sự 2015, sửa đổi, bổ sung năm 2017",
+    "penalty": {
+      "criminal": [
+        { "level": "Khung 1", "detail": "6 tháng - 3 năm tù" },
+        { "level": "Khung 2", "detail": "2 - 7 năm tù" }
+      ]
+    }
+  },
+
+  {
+    "group": "Ma túy",
+    "title": "Tàng trữ trái phép chất ma túy",
+    "content": "Cất giữ ma túy trái phép. Tàng trữ trái phép chất ma túy",
+    "keywords": [
+      "tàng trữ ma túy bị xử lý thế nào",
+      "giữ ma túy có bị đi tù không",
+      "có ít ma túy có bị tội không",
+      "tàng trữ ma túy bị bao nhiêu năm",
+      "bị bắt giữ ma túy xử sao"
+    ],
+    "law": "Điều 249 Bộ luật Hình sự 2015, sửa đổi, bổ sung năm 2017",
+    "penalty": {
+      "criminal": [
+        { "level": "Khung 1", "detail": "1 - 5 năm tù" },
+        { "level": "Khung 2", "detail": "5 - 10 năm tù" }
+      ]
+    }
+  },
+  {
+    "group": "Ma túy",
+    "title": "Mua bán trái phép chất ma túy",
+    "content": "Trao đổi, buôn bán ma túy.",
+     "keywords": [
+      "bán ma túy", 
+      "buôn ma túy",
+      "bán ma túy bị xử lý thế nào",
+      "buôn ma túy có bị tử hình không",
+      "tội mua bán ma túy bị bao nhiêu năm",
+      "bán ma túy số lượng nhỏ có sao không",
+      "hình phạt buôn ma túy"
+    ],
+    "law": "Điều 251 Bộ luật Hình sự 2015, sửa đổi, bổ sung năm 2017",
+    "penalty": {
+      "criminal": [
+        { "level": "Khung 1", "detail": "2 - 7 năm tù" },
+        { "level": "Khung 4", "detail": "Tử hình" }
+      ]
+    }
+  },
+  {
+    "group": "Ma túy",
+    "title": "Vận chuyển trái phép chất ma túy",
+    "content": "Mang, vận chuyển ma túy trái phép.",
+    "keywords": ["vận chuyển ma túy","vận chuyển ma túy bị xử lý thế nào",
+      "chở thuê ma túy có bị tội không",
+      "mang ma túy giúp người khác có bị tù không",
+      "tội vận chuyển ma túy bao nhiêu năm",
+      "bị bắt khi vận chuyển ma túy xử sao"],
+    "law": "Điều 250 Bộ luật Hình sự 2015, sửa đổi, bổ sung năm 2017",
+    "penalty": {
+      "criminal": [
+        { "level": "Khung 1", "detail": "2 - 7 năm tù" },
+        { "level": "Khung 4", "detail": "Tử hình" }
+      ]
+    }
+  },
+  {
+    "group": "Ma túy",
+    "title": "Tổ chức sử dụng trái phép chất ma túy",
+    "content": "Tổ chức hoặc chứa chấp việc sử dụng ma túy.",
+    "keywords": ["tổ chức ma túy", "tổ chức sử dụng ma túy", "tổ chức sử dụng ma túy bị xử lý thế nào",
+      "cho người khác sử dụng ma túy có bị tội không",
+      "chứa chấp sử dụng ma túy bị sao",
+      "tổ chức chơi ma túy bị bao nhiêu năm",
+      "hình phạt tổ chức ma túy"],
+    "law": "Điều 255 Bộ luật Hình sự 2015, sửa đổi, bổ sung năm 2017",
+    "penalty": {
+      "criminal": [
+        { "level": "Khung 1", "detail": "2 - 7 năm tù" },
+        { "level": "Khung 3", "detail": "15 - 20 năm hoặc chung thân" }
+      ]
+    }
+  },
+
+  {
+    "group": "Giao thông",
+    "title": "Vi phạm quy định về tham gia giao thông đường bộ",
+    "content": "Gây tai nạn giao thông nghiêm trọng.",
+    "keywords": ["tai nạn", "đâm xe", "giao thông",
+     "gây tai nạn giao thông bị xử lý thế nào",
+      "đâm chết người khi lái xe bị sao",
+      "tai nạn giao thông có đi tù không",
+      "lỗi giao thông gây chết người bị bao nhiêu năm",
+      "vi phạm giao thông nghiêm trọng xử sao"
+  
+  ],
+    "law": "Điều 260 Bộ luật Hình sự 2015, sửa đổi, bổ sung năm 2017",
+    "penalty": {
+      "criminal": [
+        { "level": "Khung 1", "detail": "1 - 5 năm tù" },
+        { "level": "Khung 2", "detail": "3 - 10 năm tù" },
+        { "level": "Khung 3", "detail": "7 - 15 năm tù" }
+      ]
+    }
+  },
+  {
+    "group": "Giao thông",
+    "title": "Đua xe trái phép",
+    "content": "Tổ chức hoặc tham gia đua xe trái phép.",
+    "keywords": ["đua xe", "đua xe trái phép bị xử lý thế nào",
+      "tham gia đua xe có bị tù không",
+      "tổ chức đua xe bị bao nhiêu năm",
+      "đua xe bị bắt xử sao",
+      "tội đua xe trái phép"],
+    "law": "Điều 266 Bộ luật Hình sự 2015, sửa đổi, bổ sung năm 2017",
+    "penalty": {
+      "criminal": [
+        { "level": "Cơ bản", "detail": "6 tháng - 3 năm tù" }
+      ]
+    }
+  },
+
+  {
+    "group": "Trật tự xã hội",
+    "title": "Gây rối trật tự công cộng",
+    "content": "Gây mất an ninh trật tự nơi công cộng.",
+    "keywords": ["gây rối", "đánh nhau", "gây rối trật tự công cộng bị xử lý thế nào",
+      "đánh nhau ngoài đường có bị tù không",
+      "tụ tập gây rối bị xử sao",
+      "gây rối bị bao nhiêu năm",
+      "tội gây rối trật tự là gì"],
+    "law": "Điều 318 Bộ luật Hình sự 2015, sửa đổi, bổ sung năm 2017",
+    "penalty": {
+      "criminal": [
+        { "level": "Cơ bản", "detail": "3 tháng - 2 năm tù" }
+      ]
+    }
+  },
+  {
+    "group": "Trật tự xã hội",
+    "title": "Chống người thi hành công vụ",
+    "content": "Cản trở hoặc tấn công người đang thi hành công vụ.",
+    "keywords": ["chống công an", "gây rối trật tự công cộng bị xử lý thế nào",
+      "đánh nhau ngoài đường có bị tù không",
+      "tụ tập gây rối bị xử sao",
+      "gây rối bị bao nhiêu năm",
+      "tội gây rối trật tự là gì"],
+    "law": "Điều 330 Bộ luật Hình sự 2015, sửa đổi, bổ sung năm 2017",
+    "penalty": {
+      "criminal": [
+        { "level": "Cơ bản", "detail": "6 tháng - 3 năm tù" }
+      ]
+    }
+  },{
+  "group": "Quản lý giam giữ",
+  "title": "Chế độ thăm gặp phạm nhân",
+  "content": "Phạm nhân được gặp thân nhân theo quy định, mỗi tháng 1 lần, mỗi lần không quá 1 giờ; trường hợp đặc biệt có thể được xem xét tăng số lần gặp.",
+  "keywords": ["thăm gặp", "gặp thân nhân","phạm nhân được gặp người thân bao nhiêu lần",
+      "mỗi tháng được thăm nuôi mấy lần",
+      "thăm phạm nhân cần thủ tục gì",
+      "ai được vào thăm phạm nhân",
+      "thời gian thăm gặp bao lâu"],
+  "law": "Luật Thi hành án hình sự 2019",
+  "penalty": {
+    "note": "Việc thăm gặp phải tuân thủ nội quy trại giam và chịu sự kiểm soát của cơ sở giam giữ."
+  }
+},
+{
+  "group": "Tố tụng hình sự",
+  "title": "Thời hạn tạm giữ",
+  "content": "Thời hạn tạm giữ không quá 3 ngày; trong trường hợp cần thiết có thể gia hạn nhưng không quá 6 ngày; trường hợp đặc biệt có thể gia hạn lần thứ hai nhưng tổng thời gian không quá 9 ngày.",
+  "keywords": ["tạm giữ", "thời hạn tạm giữ","tạm giữ bao lâu",
+      "bị tạm giữ tối đa mấy ngày",
+      "tạm giữ có gia hạn không",
+      "tạm giữ 3 ngày có đúng không",
+      "quá thời hạn tạm giữ thì sao"],
+  "law": "Điều 118 Bộ luật Tố tụng hình sự 2015",
+  "penalty": {
+    "note": "Quá thời hạn phải trả tự do hoặc chuyển sang biện pháp tạm giam."
+  }
+},
+{
+  "group": "Tố tụng hình sự",
+  "title": "Thời hạn tạm giam",
+  "content": "Thời hạn tạm giam tùy thuộc vào tính chất vụ án: ít nghiêm trọng không quá 2 tháng; nghiêm trọng không quá 3 tháng; rất nghiêm trọng không quá 4 tháng; đặc biệt nghiêm trọng không quá 4 tháng và có thể gia hạn theo quy định.",
+  "keywords": ["tạm giam", "thời hạn tạm giam","tạm giam bao lâu",
+      "bị tạm giam tối đa mấy tháng",
+      "tạm giam có gia hạn không",
+      "tạm giam lâu nhất bao lâu",
+      "tạm giam khác gì tạm giữ"],
+  "law": "Điều 173 Bộ luật Tố tụng hình sự 2015",
+  "penalty": {
+    "note": "Việc gia hạn phải có quyết định của cơ quan có thẩm quyền."
+  }
+},{
+  "group": "Quản lý giam giữ",
+  "title": "Quy định gửi quà cho phạm nhân",
+  "content": "Phạm nhân được nhận quà của thân nhân theo quy định. Việc gửi quà phải thông qua cơ sở giam giữ, được kiểm tra và chỉ bao gồm các vật phẩm được phép. Không được gửi tiền mặt, vật cấm hoặc đồ không đảm bảo an ninh, an toàn.",
+  "keywords": ["gửi quà", "nhận quà", "thân nhân gửi đồ", "gửi quà cho phạm nhân như thế nào",
+      "phạm nhân có được nhận đồ không",
+      "có được gửi tiền cho phạm nhân không",
+      "gửi đồ vào trại giam cần gì",
+      "đồ nào được gửi vào trại giam"],
+  "law": "Luật Thi hành án hình sự 2019 và các văn bản hướng dẫn",
+  "penalty": {
+    "note": "Quà gửi không đúng quy định sẽ bị từ chối hoặc xử lý theo nội quy cơ sở giam giữ."
+  }
+},{
+  "group": "Quản lý tạm giữ, tạm giam",
+  "title": "Gửi quà cho người bị tạm giữ, tạm giam",
+  "content": "Người bị tạm giữ, tạm giam được nhận quà, tiền, đồ vật từ thân nhân theo quy định của cơ sở giam giữ. Việc gửi quà phải thông qua cơ sở giam giữ, được kiểm tra, kiểm soát chặt chẽ và chỉ bao gồm các vật phẩm được phép sử dụng. Không được gửi vật cấm, đồ nguy hiểm hoặc vi phạm quy định an ninh.",
+  "keywords": ["gửi quà", "tạm giữ", "tạm giam", "nhận đồ", "gửi quà cho người bị tạm giam như thế nào",
+      "bị tạm giữ có được nhận đồ không",
+      "có được gửi tiền cho người tạm giam không",
+      "thủ tục gửi đồ vào trại tạm giam",
+      "có được đưa đồ trực tiếp không"],
+  "law": "Luật Thi hành tạm giữ, tạm giam 2015",
+  "penalty": {
+    "note": "Đồ vật gửi không đúng quy định sẽ bị từ chối; trường hợp vi phạm có thể bị xử lý theo nội quy cơ sở giam giữ hoặc quy định pháp luật."
+  }
+}
+]

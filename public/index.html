@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI Pháp Luật Assistant</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: #0f172a;
+      color: white;
+      display: flex;
+      height: 100vh;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+      width: 260px;
+      background: #111827;
+      padding: 15px;
+      border-right: 1px solid #1f2937;
+    }
+
+    .sidebar h2 {
+      font-size: 16px;
+      margin-bottom: 10px;
+      color: #60a5fa;
+    }
+
+    .tag {
+      display: block;
+      padding: 8px;
+      margin: 5px 0;
+      background: #1f2937;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    .tag:hover {
+      background: #374151;
+    }
+
+    /* CHAT AREA */
+    .chat-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      padding: 15px;
+      background: #111827;
+      border-bottom: 1px solid #1f2937;
+      font-weight: bold;
+    }
+
+    .messages {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    .msg {
+      max-width: 70%;
+      padding: 10px 14px;
+      margin: 10px 0;
+      border-radius: 12px;
+      white-space: pre-line;
+      line-height: 1.4;
+      font-size: 14px;
+    }
+
+    .user {
+      background: #2563eb;
+      margin-left: auto;
+      text-align: right;
+    }
+
+    .bot {
+      background: #1f2937;
+      margin-right: auto;
+    }
+
+    /* INPUT */
+    .input-box {
+      display: flex;
+      padding: 10px;
+      background: #111827;
+      border-top: 1px solid #1f2937;
+    }
+
+    input {
+      flex: 1;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      outline: none;
+      background: #1f2937;
+      color: white;
+    }
+
+    button {
+      margin-left: 10px;
+      padding: 12px 16px;
+      border: none;
+      background: #2563eb;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1d4ed8;
+    }
+
+    .typing {
+      font-size: 12px;
+      opacity: 0.6;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <h2>📚 Nhóm luật</h2>
+    <div class="tag" onclick="quick('giết người')">Thân thể</div>
+    <div class="tag" onclick="quick('trộm cắp tài sản')">Tài sản</div>
+    <div class="tag" onclick="quick('ma túy')">Ma túy</div>
+    <div class="tag" onclick="quick('tai nạn giao thông')">Giao thông</div>
+    <div class="tag" onclick="quick('gây rối trật tự công cộng')">Trật tự xã hội</div>
+  </div>
+
+  <!-- CHAT -->
+  <div class="chat-container">
+
+    <div class="header">
+      ⚖️ AI Pháp Luật Việt Nam Assistant
+    </div>
+
+    <div class="messages" id="box"></div>
+
+    <div class="input-box">
+      <input id="input" placeholder="Nhập câu hỏi pháp luật...VD: Tội giết người mấy năm, Tạm giữ bao lâu, Đua xe, cướp tài sản" />
+      <button onclick="send()">Gửi</button>
+    </div>
+
+  </div>
+
+<script>
+const box = document.getElementById("box");
+const input = document.getElementById("input");
+let laws = [];
+
+async function loadLaws() {
+  const res = await fetch("/laws.json");
+  laws = await res.json();
+}
+loadLaws();
+
+function getGroups() {
+  return [...new Set(laws.map(l => l.group))];
+}
+function addMsg(text, type) {
+  const div = document.createElement("div");
+  div.className = "msg " + type;
+  div.innerText = text;
+  box.appendChild(div);
+  box.scrollTop = box.scrollHeight;
+}
+
+async function send(text) {
+  const msg = text || input.value;
+  if (!msg) return;
+
+  addMsg(msg, "user");
+  input.value = "";
+
+  addMsg("⏳ Đang xử lý...", "bot");
+
+  const res = await fetch("http://localhost:3000/chat", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ message: msg })
+  });
+
+  const data = await res.json();
+
+  box.lastChild.remove(); // remove loading
+  addMsg(data.answer, "bot");
+}
+
+function quick(text) {
+  send(text);
+}
+
+input.addEventListener("keydown", e => {
+  if (e.key === "Enter") send();
+});
+</script>
+
+</body>
+</html>
