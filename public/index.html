@@ -1,177 +1,234 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <title>AI Pháp Luật Assistant</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: "Segoe UI", sans-serif;
-      background: #0f172a;
-      color: white;
-      display: flex;
-      height: 100vh;
-    }
+<meta charset="UTF-8" />
+<title>Trợ lý pháp luật TG, TG</title>
 
-    /* SIDEBAR */
-    .sidebar {
-      width: 260px;
-      background: #111827;
-      padding: 15px;
-      border-right: 1px solid #1f2937;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
 
-    .sidebar h2 {
-      font-size: 16px;
-      margin-bottom: 10px;
-      color: #60a5fa;
-    }
+body {
+  display: flex;
+  height: 100vh;
+  background: #0f172a;
+  color: #e5e7eb;
+}
 
-    .tag {
-      display: block;
-      padding: 8px;
-      margin: 5px 0;
-      background: #1f2937;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 13px;
-    }
+/* SIDEBAR */
+.sidebar {
+  width: 260px;
+  background: #020617;
+  border-right: 1px solid #1e293b;
+  display: flex;
+  flex-direction: column;
+}
 
-    .tag:hover {
-      background: #374151;
-    }
+.sidebar h2 {
+  padding: 16px;
+  font-size: 14px;
+  color: #38bdf8;
+}
 
-    /* CHAT AREA */
-    .chat-container {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-    }
+.new-chat {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  background: #1d4ed8;
+  text-align: center;
+  cursor: pointer;
+}
 
-    .header {
-      padding: 15px;
-      background: #111827;
-      border-bottom: 1px solid #1f2937;
-      font-weight: bold;
-    }
+.history {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+}
 
-    .messages {
-      flex: 1;
-      padding: 20px;
-      overflow-y: auto;
-    }
+.history div {
+  padding: 8px;
+  margin-bottom: 5px;
+  border-radius: 6px;
+  cursor: pointer;
+}
 
-    .msg {
-      max-width: 70%;
-      padding: 10px 14px;
-      margin: 10px 0;
-      border-radius: 12px;
-      white-space: pre-line;
-      line-height: 1.4;
-      font-size: 14px;
-    }
+.history div:hover {
+  background: #1e293b;
+}
 
-    .user {
-      background: #2563eb;
-      margin-left: auto;
-      text-align: right;
-    }
+/* CHAT */
+.chat-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
 
-    .bot {
-      background: #1f2937;
-      margin-right: auto;
-    }
+.header {
+  padding: 15px;
+  border-bottom: 1px solid #1e293b;
+  background: #020617;
+  font-weight: bold;
+}
 
-    /* INPUT */
-    .input-box {
-      display: flex;
-      padding: 10px;
-      background: #111827;
-      border-top: 1px solid #1f2937;
-    }
+.messages {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
 
-    input {
-      flex: 1;
-      padding: 12px;
-      border: none;
-      border-radius: 8px;
-      outline: none;
-      background: #1f2937;
-      color: white;
-    }
+.msg {
+  max-width: 65%;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+  line-height: 1.5;
+  white-space: pre-line;
+  display: flex;
+  gap: 10px;
+}
 
-    button {
-      margin-left: 10px;
-      padding: 12px 16px;
-      border: none;
-      background: #2563eb;
-      color: white;
-      border-radius: 8px;
-      cursor: pointer;
-    }
+.user {
+  background: #2563eb;
+  align-self: flex-end;
+}
 
-    button:hover {
-      background: #1d4ed8;
-    }
+.bot {
+  background: #1e293b;
+  align-self: flex-start;
+}
 
-    .typing {
-      font-size: 12px;
-      opacity: 0.6;
-      margin-top: 5px;
-    }
-  </style>
+/* INPUT */
+.input-box {
+  display: flex;
+  padding: 12px;
+  border-top: 1px solid #1e293b;
+  background: #020617;
+}
+
+input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: #1e293b;
+  color: white;
+}
+
+button {
+  margin-left: 10px;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #2563eb;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+/* SUGGEST */
+.suggest {
+  margin-top: 10px;
+}
+
+.suggest button {
+  margin: 5px 5px 0 0;
+  background: #334155;
+  font-size: 12px;
+}
+</style>
 </head>
 
 <body>
 
-  <!-- SIDEBAR -->
-  <div class="sidebar">
-    <h2>📚 Nhóm luật</h2>
-    <div class="tag" onclick="quick('giết người')">Thân thể</div>
-    <div class="tag" onclick="quick('trộm cắp tài sản')">Tài sản</div>
-    <div class="tag" onclick="quick('ma túy')">Ma túy</div>
-    <div class="tag" onclick="quick('tai nạn giao thông')">Giao thông</div>
-    <div class="tag" onclick="quick('gây rối trật tự công cộng')">Trật tự xã hội</div>
+<!-- SIDEBAR -->
+<div class="sidebar">
+  <h2>⚖️ Trợ lý nội bộ</h2>
+  <div class="new-chat" onclick="newChat()">+ Cuộc trò chuyện mới</div>
+  <div class="history" id="history"></div>
+</div>
+
+<!-- CHAT -->
+<div class="chat-container">
+
+  <div class="header">
+    Trợ lý pháp luật Tạm giữ, tạm giam - Nội bộ
   </div>
 
-  <!-- CHAT -->
-  <div class="chat-container">
+  <div class="messages" id="box"></div>
 
-    <div class="header">
-      ⚖️ AI Pháp Luật Việt Nam Assistant
-    </div>
-
-    <div class="messages" id="box"></div>
-
-    <div class="input-box">
-      <input id="input" placeholder="Nhập câu hỏi pháp luật...VD: Tội giết người mấy năm, Tạm giữ bao lâu, Đua xe, cướp tài sản" />
-      <button onclick="send()">Gửi</button>
-    </div>
-
+  <div class="input-box">
+    <input id="input" placeholder="Hỏi pháp luật..."/>
+    <button onclick="send()">➤</button>
   </div>
+
+</div>
 
 <script>
 const box = document.getElementById("box");
 const input = document.getElementById("input");
-let laws = [];
+const historyBox = document.getElementById("history");
 
-async function loadLaws() {
-  const res = await fetch("/laws.json");
-  laws = await res.json();
-}
-loadLaws();
+let history = [];
 
-function getGroups() {
-  return [...new Set(laws.map(l => l.group))];
+/* =======================
+   FORMAT BOT TEXT
+======================= */
+function formatBot(text) {
+  return text
+    .replace(/📘/g, "<b style='color:#38bdf8'>📘")
+    .replace(/📖/g, "<b style='color:#facc15'>📖")
+    .replace(/🔒/g, "<b style='color:#f87171'>🔒")
+    .replace(/\n/g, "<br>");
 }
+
+/* =======================
+   ADD MESSAGE
+======================= */
 function addMsg(text, type) {
   const div = document.createElement("div");
   div.className = "msg " + type;
-  div.innerText = text;
+
+  if (type === "bot") {
+    div.innerHTML = formatBot(text);
+  } else {
+    div.innerText = text;
+  }
+
   box.appendChild(div);
   box.scrollTop = box.scrollHeight;
+  return div;
 }
 
+/* =======================
+   TYPING EFFECT
+======================= */
+function typeText(element, text) {
+  let i = 0;
+  element.innerHTML = "";
+
+  function typing() {
+    if (i < text.length) {
+      element.innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typing, 10);
+    }
+  }
+
+  typing();
+}
+
+/* =======================
+   SEND
+======================= */
 async function send(text) {
   const msg = text || input.value;
   if (!msg) return;
@@ -179,27 +236,157 @@ async function send(text) {
   addMsg(msg, "user");
   input.value = "";
 
-  addMsg("⏳ Đang xử lý...", "bot");
+  const loading = addMsg("Đang suy nghĩ...", "bot");
 
   const res = await fetch("http://localhost:3000/chat", {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ message: msg })
+    headers: {"Content-Type":"application/json"},
+    body: JSON.stringify({message: msg})
   });
 
   const data = await res.json();
 
-  box.lastChild.remove(); // remove loading
-  addMsg(data.answer, "bot");
+  loading.innerHTML = "";
+  typeText(loading, data.answer);
+
+  saveHistory(msg);
+  showSuggest(msg);
 }
 
-function quick(text) {
-  send(text);
+/* =======================
+   HISTORY (NO DUPLICATE)
+======================= */
+function saveHistory(text) {
+  text = text.trim();
+
+  history = history.filter(h => h.toLowerCase() !== text.toLowerCase());
+  history.unshift(text);
+
+  history = history.slice(0, 10);
+
+  localStorage.setItem("history", JSON.stringify(history));
+  renderHistory();
 }
 
+function loadHistory() {
+  const data = localStorage.getItem("history");
+  if (data) {
+    history = JSON.parse(data);
+    renderHistory();
+  }
+}
+
+function renderHistory() {
+  historyBox.innerHTML = "";
+
+  history.forEach(h => {
+    const div = document.createElement("div");
+    div.innerText = h;
+    div.onclick = () => send(h);
+    historyBox.appendChild(div);
+  });
+}
+
+/* =======================
+   SUGGESTION
+======================= */
+function showSuggest(msg) {
+  const suggestBox = document.createElement("div");
+  suggestBox.className = "suggest";
+
+  let list = [];
+
+  if (msg.includes("tạm giam")) {
+  list = [
+    "Tạm giam tối đa bao lâu?",
+    "Điều kiện được tạm giam là gì?",
+    "Có được gặp người thân không?",
+    "Quy định gia hạn tạm giam như thế nào?"
+  ];
+
+} else if (msg.includes("tạm giữ")) {
+  list = [
+    "Tạm giữ tối đa bao nhiêu ngày?",
+    "Khác gì giữa tạm giữ và tạm giam?",
+    "Có được bảo lãnh khi tạm giữ không?",
+    "Quyền của người bị tạm giữ là gì?"
+  ];
+
+} else if (msg.includes("trộm")) {
+  list = [
+    "Trộm dưới 2 triệu có bị truy cứu hình sự không?",
+    "Trộm bao nhiêu thì bị đi tù?",
+    "Khung hình phạt tội trộm cắp tài sản?",
+    "Có được hưởng án treo không?"
+  ];
+
+} else if (msg.includes("ma túy")) {
+  list = [
+    "Tàng trữ ma túy bị xử lý thế nào?",
+    "Mua bán ma túy bị phạt bao nhiêu năm tù?",
+    "Sử dụng ma túy có bị đi tù không?",
+    "Phân biệt tàng trữ và vận chuyển ma túy"
+  ];
+
+} else if (msg.includes("đánh nhau") || msg.includes("cố ý gây thương tích")) {
+  list = [
+    "Đánh nhau gây thương tích bị xử lý thế nào?",
+    "Bao nhiêu % thương tật thì bị truy cứu hình sự?",
+    "Có phải đi tù không nếu hòa giải?",
+    "Khung hình phạt tội cố ý gây thương tích"
+  ];
+
+} else if (msg.includes("lừa đảo")) {
+  list = [
+    "Lừa đảo chiếm đoạt tài sản bị phạt bao nhiêu năm tù?",
+    "Số tiền bao nhiêu thì bị truy cứu hình sự?",
+    "Phân biệt lừa đảo và tranh chấp dân sự",
+    "Có được giảm nhẹ hình phạt không?"
+  ];
+
+} else if (msg.includes("giam giữ") || msg.includes("thi hành án")) {
+  list = [
+    "Thời hạn thi hành án phạt tù là bao lâu?",
+    "Điều kiện giảm án, tha tù trước thời hạn?",
+    "Quy định về trại giam như thế nào?",
+    "Quyền của phạm nhân là gì?"
+  ];
+
+} else if (msg.includes("thăm gặp")) {
+  list = [
+    "Quy định thăm gặp người bị tạm giam?",
+    "Bao lâu được thăm gặp 1 lần?",
+    "Ai được quyền thăm gặp?",
+    "Có được gửi đồ vào trại không?"
+  ];
+}
+
+  list.forEach(s => {
+    const btn = document.createElement("button");
+    btn.innerText = s;
+    btn.onclick = () => send(s);
+    suggestBox.appendChild(btn);
+  });
+
+  box.appendChild(suggestBox);
+}
+
+/* =======================
+   NEW CHAT
+======================= */
+function newChat() {
+  box.innerHTML = "";
+}
+
+/* =======================
+   ENTER
+======================= */
 input.addEventListener("keydown", e => {
   if (e.key === "Enter") send();
 });
+
+/* INIT */
+loadHistory();
 </script>
 
 </body>

@@ -95,7 +95,28 @@
       ]
     }
   },
-
+{
+  "group": "Thân thể",
+  "title": "Giao cấu hoặc thực hiện hành vi quan hệ tình dục với người từ đủ 13 đến dưới 16 tuổi",
+  "content": "Người nào đủ 18 tuổi trở lên mà thực hiện hành vi giao cấu hoặc hành vi quan hệ tình dục khác với người từ đủ 13 tuổi đến dưới 16 tuổi thì bị coi là phạm tội theo quy định pháp luật, kể cả khi có sự đồng thuận của nạn nhân. Hành vi này xâm phạm nghiêm trọng đến sự phát triển thể chất, tinh thần và nhân phẩm của người chưa thành niên.",
+  "keywords": [
+    "quan hệ với người dưới 16 tuổi bị xử lý thế nào",
+    "giao cấu với người 13 15 tuổi có bị đi tù không",
+    "tội giao cấu với người chưa thành niên",
+    "quan hệ với trẻ vị thành niên bị phạt bao nhiêu năm",
+    "Điều 145 Bộ luật hình sự là gì",
+    "Giao cấu 13 tuổi",
+    "hiếp dâm người dưới 16 tuổi",
+    "Giao cấu"
+  ],
+  "law": "Điều 145 Bộ luật Hình sự 2015 (sửa đổi, bổ sung 2017)",
+  "penalty": {
+    "criminal": [
+      { "level": "Khung 1", "detail": "01 - 05 năm tù" },
+      { "level": "Khung 2", "detail": "03 - 10 năm tù (có tình tiết tăng nặng)" }
+    ]
+  }
+},
   {
     "group": "Tài sản",
     "title": "Cướp tài sản",
@@ -408,6 +429,30 @@
   "law": "Luật Thi hành tạm giữ, tạm giam 2015",
   "penalty": {
     "note": "Đồ vật gửi không đúng quy định sẽ bị từ chối; trường hợp vi phạm có thể bị xử lý theo nội quy cơ sở giam giữ hoặc quy định pháp luật."
+  }
+}, 
+{
+  "group": "Quản lý tạm giữ, tạm giam",
+  "title": "Những người được quyền thăm gặp can phạm nhân",
+  "content": "Người bị tạm giữ, tạm giam được quyền gặp thân nhân, người đại diện hợp pháp hoặc người bào chữa theo quy định của Luật Thi hành tạm giữ, tạm giam năm 2015. Thân nhân được thăm gặp bao gồm: ông, bà, cha, mẹ, vợ, chồng, con, anh, chị, em ruột và những người có quan hệ thân thích khác theo xác nhận của cơ quan có thẩm quyền. Việc thăm gặp phải được sự đồng ý của cơ sở giam giữ, đảm bảo an ninh, trật tự và thực hiện đúng nội quy. Người bào chữa được gặp người bị tạm giữ, tạm giam để thực hiện việc bào chữa theo quy định của pháp luật, không bị hạn chế về số lần gặp trong phạm vi luật định, nhưng phải tuân thủ thủ tục đăng ký và kiểm soát của cơ sở giam giữ. Mọi hoạt động thăm gặp đều phải được kiểm tra, giám sát nhằm đảm bảo an toàn và không ảnh hưởng đến quá trình điều tra, xử lý vụ án.",
+  "keywords": [
+    "ai được phép thăm",
+    "ai được phép gặp",
+    "ai được gặp",
+    "ai không được phép gặp",
+    "ai không được gặp",
+    "thân nhân thăm gặp trại tạm giam",
+    "quyền thăm gặp bị can",
+    "người nhà có được gặp người tạm giữ không",
+    "ai được gặp người bị tạm giam",
+    "thủ tục thăm gặp trại tạm giam",
+    "luật thăm gặp người bị tạm giữ",
+    "người bào chữa thăm gặp bị can",
+    "quy định gặp phạm nhân tạm giam"
+  ],
+  "law": "Luật Thi hành tạm giữ, tạm giam 2015",
+  "penalty": {
+    "note": "Việc thăm gặp không đúng đối tượng, không đúng thủ tục hoặc lợi dụng thăm gặp để đưa thông tin, vật cấm vào cơ sở giam giữ có thể bị từ chối hoặc xử lý theo quy định nội quy cơ sở giam giữ và pháp luật hiện hành."
   }
 }
 ]
