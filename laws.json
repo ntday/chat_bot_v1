@@ -648,27 +648,7 @@
     "note": "Gia hạn sai quy định là vi phạm tố tụng."
   }
 },
-{
-  "group": "Quản lý tạm giữ, tạm giam",
-  "title": "Thủ tục tiếp nhận người bị tạm giữ, tạm giam (nhập trại)",
-  "content": "Khi tiếp nhận người bị tạm giữ, tạm giam vào cơ sở giam giữ phải kiểm tra đầy đủ hồ sơ, lệnh và quyết định của cơ quan có thẩm quyền. Cán bộ tiếp nhận phải đối chiếu nhân thân, lập biên bản giao nhận, kiểm tra thân thể, tư trang và đồ vật mang theo. Các vật dụng không được phép phải tạm giữ theo quy định. Sau đó tiến hành lập hồ sơ quản lý, chụp ảnh, lăn tay, phân loại và bố trí buồng giam phù hợp. Người bị tạm giữ, tạm giam được phổ biến nội quy cơ sở giam giữ, quyền và nghĩa vụ của mình. Trường hợp có dấu hiệu thương tích hoặc vấn đề sức khỏe phải được kiểm tra, lập biên bản và xử lý theo quy định.",
-  "keywords": [
-    "nhập trại tạm giam",
-    "thủ tục tiếp nhận tạm giam",
-    "tiếp nhận người bị tạm giữ",
-    "quy trình nhập trại",
-    "khi vào trại giam cần làm gì",
-    "kiểm tra người bị tạm giam",
-    "lập hồ sơ tạm giữ",
-    "bị tạm giam vào trại như thế nào",
-    "tiếp nhận can phạm nhân",
-    "quy định nhập trại tạm giữ"
-  ],
-  "law": "Luật Thi hành tạm giữ, tạm giam 2015",
-  "penalty": {
-    "note": "Việc tiếp nhận không đúng thủ tục, thiếu hồ sơ hoặc vi phạm quy định quản lý giam giữ có thể bị xử lý trách nhiệm theo quy định pháp luật."
-  }
-}, 
+
   {
     "group": "Quản lý tạm giữ, tạm giam",
     "title": "Hồ sơ tiếp nhận người bị tạm giữ, tạm giam",
