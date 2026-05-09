@@ -1,7 +1,7 @@
 {
   "name": "chat_bot_v2_2",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "type": "module",
   "scripts": {
     "build-index": "node scripts/build_index.js",
