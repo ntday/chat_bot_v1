@@ -2,417 +2,94 @@
 <html lang="vi">
 
 <head>
-  <meta charset="UTF-8" />
-  <title>Trợ lý pháp luật TG, TG</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cô Út Pháp Luật 🌸</title>
 
- <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
-}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
 
-body {
-  display: flex;
-  height: 100vh;
-  background: #fff7f8; /* nền trắng hồng nhẹ */
-  color: #3a2e2f;
-}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
 
-/* SIDEBAR */
-.sidebar {
-  width: 260px;
-  background: #fdecee; /* hồng rất nhạt */
-  border-right: 1px solid #f3d6da;
-  display: flex;
-  flex-direction: column;
-}
-
-.sidebar h2 {
-  padding: 16px;
-  font-size: 14px;
-  color: #c08497; /* hồng đậm hơn chút */
-}
-
-.new-chat {
-  margin: 10px;
-  padding: 10px;
-  border-radius: 10px;
-  background: #ebd5d7; /* màu chủ đạo */
-  text-align: center;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.new-chat:hover {
-  background: #e4bfc3;
-}
-
-.history {
-  flex: 1;
-  overflow-y: auto;
-  padding: 10px;
-}
-
-.history div {
-  padding: 8px;
-  margin-bottom: 5px;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.history div:hover {
-  background: #f8dfe3;
-}
-
-/* CHAT */
-.chat-container {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.header {
-  padding: 15px;
-  background: #ffffff;
-  border-bottom: 1px solid #f1d5d9;
-  font-weight: bold;
-}
-
-.messages {
-  flex: 1;
-  padding: 20px;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-}
-
-/* MESSAGE */
-.msg {
-  max-width: 65%;
-  padding: 12px 16px;
-  margin-bottom: 12px;
-  border-radius: 14px;
-  line-height: 1.5;
-  white-space: pre-line;
-  display: flex;
-  gap: 10px;
-}
-
-.user {
-  background: #ebd5d7;
-  color: #3a2e2f;
-  align-self: flex-end;
-}
-
-.bot {
-  background: #ffffff;
-  border: 1px solid #f1d5d9;
-  align-self: flex-start;
-}
-
-/* INPUT */
-.input-box {
-  display: flex;
-  padding: 12px;
-  border-top: 1px solid #f1d5d9;
-  background: #fff;
-}
-
-input {
-  flex: 1;
-  padding: 12px;
-  border-radius: 10px;
-  border: 1px solid #f1d5d9;
-  outline: none;
-  background: #fff;
-  color: #3a2e2f;
-}
-
-input:focus {
-  border-color: #ebd5d7;
-}
-
-/* BUTTON */
-button {
-  margin-left: 10px;
-  padding: 12px;
-  border: none;
-  border-radius: 10px;
-  background: #ebd5d7;
-  color: #3a2e2f;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-button:hover {
-  background: #e4bfc3;
-}
-
-/* SUGGEST */
-.suggest {
-  margin-top: 10px;
-}
-
-.suggest button {
-  margin: 5px 5px 0 0;
-  background: #f8dfe3;
-  color: #3a2e2f;
-  font-size: 12px;
-  border-radius: 8px;
-}
-
-.suggest button:hover {
-  background: #ebd5d7;
-}
-</style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- SIDEBAR -->
-  <div class="sidebar">
-    <h2>🌸👩‍⚖️ Cô Út pháp luật</h2>
-    <div class="new-chat" onclick="newChat()">+ Cuộc trò chuyện mới</div>
-    <div class="history" id="history"></div>
-  </div>
-
-  <!-- CHAT -->
-  <div class="chat-container">
-
-    <div class="header">
-  🌸👩‍⚖️ Cô Út pháp luật<br>
-  <span style="font-size:12px; color:#c08497;">
-    Hỏi gì Cô Út nói đó – đúng luật, dễ hiểu - Tham khảo! 😄
-  </span>
-</div>
-
-    <div class="messages" id="box"></div>
-
-    <div class="input-box">
-      <input id="input" placeholder="Nhập câu hỏi của bạn...VD: Thời hạn tạm giữ" />
-      <button onclick="send()">➤</button>
+    <!-- SIDEBAR -->
+    <div id="sidebar">
+        <h2>🌸👩‍⚖️ Cô Út pháp luật</h2>
+        <button id="btn-new-chat">+ Cuộc trò chuyện mới</button>
+        <div id="history"></div>
     </div>
 
-  </div>
+    <!-- CHAT -->
+    <div id="chat-wrap">
+        <div id="chat-header">
+            <span>
+                <button id="btn-toggle-sidebar">☰</button>
+                🌸👩‍⚖️ Cô Út pháp luật
+            </span>
+            <small>Hỏi gì Cô Út nói đó – đúng luật, dễ hiểu – Tham khảo! 😄</small>
+        </div>
 
-  <script>
-    const box = document.getElementById("box");
-    const input = document.getElementById("input");
-    const historyBox = document.getElementById("history");
+        <div id="mode-toggle" class="mode-switch d-none">
+            <span class="mode-label">Mặc định</span>
+            <label class="switch">
+                <input type="checkbox" id="rich-mode">
+                <span class="slider"></span>
+            </label>
+            <span class="mode-label">Tối giản</span>
+        </div>
 
-    let history = [];
+        <!-- WELCOME -->
+        <div id="welcome">
+            <div class="avatar">👩‍⚖️</div>
+            <h3>Xin chào! Cô Út đây 😄</h3>
+            <p>Chuyên hỗ trợ thủ tục, thời hạn và quy định pháp luật.<br>Chọn câu hỏi mẫu hoặc tự gõ bên dưới nghen!</p>
 
-    /* =======================
-       FORMAT BOT TEXT
-    ======================= */
-    function formatBot(text) {
-      return text
-        .replace(/📘/g, "<b style='color:#38bdf8'>📘")
-        .replace(/📖/g, "<b style='color:#facc15'>📖")
-        .replace(/🔒/g, "<b style='color:#f87171'>🔒")
-        .replace(/\n/g, "<br>");
-    }
+            <div class="topic-group">
+                <div class="topic-label">🔒 Tạm giữ · Tạm giam</div>
+                <div class="sample-grid">
+                    <button class="sample-btn">Thời hạn tạm giữ tối đa là bao lâu?</button>
+                    <button class="sample-btn">Tạm giam có thể gia hạn mấy lần?</button>
+                    <button class="sample-btn">Quyền của người bị tạm giữ là gì?</button>
+                    <button class="sample-btn">Ai có thẩm quyền ra lệnh tạm giam?</button>
+                </div>
+            </div>
 
-    /* =======================
-       ADD MESSAGE
-    ======================= */
-    function addMsg(text, type) {
-      const div = document.createElement("div");
-      div.className = "msg " + type;
+            <div class="topic-group">
+                <div class="topic-label">🏛️ Thi hành án · Trại giam</div>
+                <div class="sample-grid">
+                    <button class="sample-btn">Thủ tục nhập trại chấp hành án gồm những gì?</button>
+                    <button class="sample-btn">Quy định thăm gặp phạm nhân như thế nào?</button>
+                    <button class="sample-btn">Quyền của phạm nhân trong trại giam?</button>
+                </div>
+            </div>
+        </div>
 
-      if (type === "bot") {
-        div.innerHTML = formatBot(text);
-      } else {
-        div.innerText = text;
-      }
+        <!-- TIN NHẮN -->
+        <div id="messages" style="display:none;"></div>
 
-      box.appendChild(div);
-      box.scrollTop = box.scrollHeight;
-      return div;
-    }
+        <div id="input-area">
+            <input id="user-input" type="text" placeholder="Nhập câu hỏi… VD: Thời hạn tạm giữ tối đa là bao lâu?" />
+            <button id="btn-send">➤</button>
+        </div>
+    </div>
 
-    /* =======================
-       TYPING EFFECT
-    ======================= */
-    function typeText(element, text) {
-      let i = 0;
-      element.innerHTML = "";
+    <div id="particles-js"></div>
 
-      function typing() {
-        if (i < text.length) {
-          element.innerHTML += text.charAt(i);
-          i++;
-          setTimeout(typing, 10);
-        }
-      }
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
 
-      typing();
-    }
-
-    /* =======================
-       SEND
-    ======================= */
-    async function send(text) {
-      const msg = text || input.value;
-      if (!msg) return;
-
-      addMsg(msg, "user");
-      input.value = "";
-
-      const loading = addMsg("Đang suy nghĩ...", "bot");
-
-      const res = await fetch("/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: msg })
-      });
-
-      const data = await res.json();
-
-      loading.innerHTML = "";
-      typeText(loading, data.answer);
-
-      saveHistory(msg);
-      showSuggest(msg);
-    }
-
-    /* =======================
-       HISTORY (NO DUPLICATE)
-    ======================= */
-    function saveHistory(text) {
-      text = text.trim();
-
-      history = history.filter(h => h.toLowerCase() !== text.toLowerCase());
-      history.unshift(text);
-
-      history = history.slice(0, 10);
-
-      localStorage.setItem("history", JSON.stringify(history));
-      renderHistory();
-    }
-
-    function loadHistory() {
-      const data = localStorage.getItem("history");
-      if (data) {
-        history = JSON.parse(data);
-        renderHistory();
-      }
-    }
-
-    function renderHistory() {
-      historyBox.innerHTML = "";
-
-      history.forEach(h => {
-        const div = document.createElement("div");
-        div.innerText = h;
-        div.onclick = () => send(h);
-        historyBox.appendChild(div);
-      });
-    }
-
-    /* =======================
-       SUGGESTION
-    ======================= */
-    function showSuggest(msg) {
-      const suggestBox = document.createElement("div");
-      suggestBox.className = "suggest";
-
-      let list = [];
-
-      if (msg.includes("tạm giam")) {
-        list = [
-          "Tạm giam tối đa bao lâu?",
-          "Điều kiện được tạm giam là gì?",
-          "Có được gặp người thân không?",
-          "Quy định gia hạn tạm giam như thế nào?"
-        ];
-
-      } else if (msg.includes("tạm giữ")) {
-        list = [
-          "Tạm giữ tối đa bao nhiêu ngày?",
-          "Khác gì giữa tạm giữ và tạm giam?",
-          "Có được bảo lãnh khi tạm giữ không?",
-          "Quyền của người bị tạm giữ là gì?"
-        ];
-
-      } else if (msg.includes("trộm")) {
-        list = [
-          "Trộm dưới 2 triệu có bị truy cứu hình sự không?",
-          "Trộm bao nhiêu thì bị đi tù?",
-          "Khung hình phạt tội trộm cắp tài sản?",
-          "Có được hưởng án treo không?"
-        ];
-
-      } else if (msg.includes("ma túy")) {
-        list = [
-          "Tàng trữ ma túy bị xử lý thế nào?",
-          "Mua bán ma túy bị phạt bao nhiêu năm tù?",
-          "Sử dụng ma túy có bị đi tù không?",
-          "Phân biệt tàng trữ và vận chuyển ma túy"
-        ];
-
-      } else if (msg.includes("đánh nhau") || msg.includes("cố ý gây thương tích")) {
-        list = [
-          "Đánh nhau gây thương tích bị xử lý thế nào?",
-          "Bao nhiêu % thương tật thì bị truy cứu hình sự?",
-          "Có phải đi tù không nếu hòa giải?",
-          "Khung hình phạt tội cố ý gây thương tích"
-        ];
-
-      } else if (msg.includes("lừa đảo")) {
-        list = [
-          "Lừa đảo chiếm đoạt tài sản bị phạt bao nhiêu năm tù?",
-          "Số tiền bao nhiêu thì bị truy cứu hình sự?",
-          "Phân biệt lừa đảo và tranh chấp dân sự",
-          "Có được giảm nhẹ hình phạt không?"
-        ];
-
-      } else if (msg.includes("giam giữ") || msg.includes("thi hành án")) {
-        list = [
-          "Thời hạn thi hành án phạt tù là bao lâu?",
-          "Điều kiện giảm án, tha tù trước thời hạn?",
-          "Quy định về trại giam như thế nào?",
-          "Quyền của phạm nhân là gì?"
-        ];
-
-      } else if (msg.includes("thăm gặp")) {
-        list = [
-          "Quy định thăm gặp người bị tạm giam?",
-          "Bao lâu được thăm gặp 1 lần?",
-          "Ai được quyền thăm gặp?",
-          "Có được gửi đồ vào trại không?"
-        ];
-      }
-
-      list.forEach(s => {
-        const btn = document.createElement("button");
-        btn.innerText = s;
-        btn.onclick = () => send(s);
-        suggestBox.appendChild(btn);
-      });
-
-      box.appendChild(suggestBox);
-    }
-
-    /* =======================
-       NEW CHAT
-    ======================= */
-    function newChat() {
-      box.innerHTML = "";
-    }
-
-    /* =======================
-       ENTER
-    ======================= */
-    input.addEventListener("keydown", e => {
-      if (e.key === "Enter") send();
-    });
-
-    /* INIT */
-    loadHistory();
-  </script>
+    <!-- Modules: thứ tự quan trọng -->
+    <script src="chat-session.js"></script>
+    <script src="chat-ui.js"></script>
+    <script src="chat-api.js"></script>
+    <script src="chat.js"></script>
 
 </body>
 

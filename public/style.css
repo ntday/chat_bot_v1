@@ -1,0 +1,546 @@
+:root {
+    --pink-50: #fff7f8;
+    --pink-100: #fdecee;
+    --pink-200: #f8dfe3;
+    --pink-300: #f4c4cd;
+    --pink-400: #e4a1b3;
+    --pink-500: #c08497;
+    --accent: #d46a8a;
+    --glass: rgba(255, 255, 255, 0.75);
+    --glass-border: rgba(255, 182, 193, 0.3);
+}
+
+/* Glassmorphism */
+.glass {
+    background: var(--glass);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px rgba(192, 132, 151, 0.15);
+}
+
+/* Particles container */
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.6;
+    transition: opacity 0.6s;
+}
+
+/* Mode switch */
+.mode-switch {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: var(--pink-500);
+    margin-left: auto;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 42px;
+    height: 24px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #ccc;
+    transition: .4s;
+    border-radius: 24px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background: var(--accent);
+}
+
+input:checked+.slider:before {
+    transform: translateX(18px);
+}
+
+/* Rich mode enhancements */
+body.rich-mode #messages .msg-bot,
+body.rich-mode #messages .msg-user {
+    box-shadow: 0 10px 30px rgba(192, 132, 151, 0.25);
+    transform: translateY(2px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.rich-mode #messages .msg-bot:hover,
+body.rich-mode #messages .msg-user:hover {
+    transform: translateY(-4px) scale(1.02);
+}
+
+/* 3D tilt nhẹ cho avatar và bubbles */
+.msg {
+    transition: transform 0.3s ease;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Be Vietnam Pro', sans-serif;
+    background: var(--pink-50);
+    color: var(--text);
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+}
+
+/* ── SIDEBAR ── */
+#sidebar {
+    width: var(--sidebar-w);
+    min-width: var(--sidebar-w);
+    background: var(--pink-100);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    transition: transform .25s ease;
+}
+
+#sidebar h2 {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--pink-500);
+    padding: 18px 16px 10px;
+}
+
+#btn-new-chat {
+    margin: 0 10px 10px;
+    border-radius: 10px;
+    background: var(--pink-300);
+    border: none;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 13px;
+    padding: 9px;
+    cursor: pointer;
+    transition: background .2s;
+}
+
+#btn-new-chat:hover {
+    background: var(--pink-400);
+}
+
+#history {
+    flex: 1;
+    overflow-y: auto;
+    padding: 6px 10px;
+}
+
+.hist-item {
+    padding: 7px 9px;
+    border-radius: 7px;
+    font-size: 12.5px;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: background .15s;
+}
+
+.hist-item:hover {
+    background: var(--pink-200);
+}
+
+/* ── CHAT ── */
+#chat-wrap {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#chat-header {
+    padding: 14px 18px;
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+#chat-header small {
+    display: block;
+    font-size: 11.5px;
+    font-weight: 400;
+    color: var(--pink-500);
+}
+
+#messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px 20px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* ── WELCOME SCREEN ── */
+#welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    padding: 28px 20px;
+    text-align: center;
+    overflow-y: auto;
+}
+
+#welcome .avatar {
+    font-size: 52px;
+    margin-bottom: 10px;
+    line-height: 1;
+}
+
+#welcome h3 {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+#welcome p {
+    font-size: 13px;
+    color: var(--pink-500);
+    margin-bottom: 22px;
+}
+
+.topic-group {
+    width: 100%;
+    max-width: 560px;
+    margin-bottom: 14px;
+    text-align: left;
+}
+
+.topic-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--pink-500);
+    text-transform: uppercase;
+    letter-spacing: .6px;
+    margin-bottom: 7px;
+    padding-left: 2px;
+}
+
+.sample-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7px;
+}
+
+.sample-btn {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 9px 12px;
+    font-size: 12.5px;
+    font-family: inherit;
+    color: var(--text);
+    cursor: pointer;
+    text-align: left;
+    transition: background .15s, border-color .15s;
+    line-height: 1.4;
+}
+
+.sample-btn:hover {
+    background: var(--pink-100);
+    border-color: var(--pink-400);
+}
+
+/* ── MESSAGES ── */
+.msg {
+    max-width: 80%;
+    padding: 11px 15px;
+    border-radius: 14px;
+    font-size: 13.5px;
+    line-height: 1.6;
+    white-space: pre-line;
+    animation: fadeUp .2s ease both;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.msg-user {
+    background: var(--pink-300);
+    align-self: flex-end;
+    max-width: 80%;
+    /* user message cũng có thể lên tới 80% */
+}
+
+.msg-bot {
+    background: #fff;
+    border: 1px solid var(--border);
+    align-self: flex-start;
+    max-width: 80%;
+    /* bot message cũng vậy */
+}
+
+.msg-bot.thinking {
+    color: var(--pink-500);
+    font-style: italic;
+}
+
+.sources-wrap {
+    align-self: flex-start;
+    max-width: 80%;
+    /* tăng từ 68% lên 80% */
+    width: 100%;
+}
+
+.sources-toggle {
+    font-size: 11px;
+    color: var(--pink-500);
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 2px 0 6px;
+    font-family: inherit;
+}
+
+.sources-body {
+    font-size: 11px;
+    background: var(--pink-50);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px 12px;
+    line-height: 1.7;
+}
+
+.suggest-wrap {
+    align-self: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    max-width: 85%;
+    /* tăng từ 80% lên 85% */
+}
+
+.suggest-btn {
+    font-size: 11.5px;
+    padding: 5px 11px;
+    border-radius: 20px;
+    background: var(--pink-200);
+    border: 1px solid var(--border);
+    color: var(--text);
+    cursor: pointer;
+    font-family: inherit;
+    transition: background .15s;
+}
+
+.suggest-btn:hover {
+    background: var(--pink-300);
+}
+
+/* ── INPUT ── */
+#input-area {
+    padding: 12px 14px;
+    background: #fff;
+    border-top: 1px solid var(--border);
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+#user-input {
+    flex: 1;
+    padding: 10px 14px;
+    border-radius: 22px;
+    border: 1px solid var(--border);
+    font-family: inherit;
+    font-size: 13.5px;
+    color: var(--text);
+    outline: none;
+    background: var(--pink-50);
+    transition: border-color .2s;
+}
+
+#user-input:focus {
+    border-color: var(--pink-400);
+}
+
+#btn-send {
+    padding: 9px 16px;
+    border-radius: 22px;
+    background: var(--pink-300);
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background .2s;
+    line-height: 1;
+}
+
+#btn-send:hover {
+    background: var(--pink-400);
+}
+
+#btn-send:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+/* ── MOBILE ── */
+#btn-toggle-sidebar {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0 10px 0 0;
+}
+
+@media (max-width: 640px) {
+    #btn-toggle-sidebar {
+        display: inline-block;
+    }
+
+    #sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        z-index: 200;
+        transform: translateX(-100%);
+    }
+
+    #sidebar.open {
+        transform: translateX(0);
+    }
+
+    .sample-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Sidebar: session active */
+.hist-item.active {
+    background: var(--pink-300);
+    font-weight: 600;
+}
+
+/* Sidebar: khi chưa có lịch sử */
+.hist-empty {
+    padding: 12px 10px;
+    font-size: 12px;
+    color: var(--pink-500);
+    text-align: center;
+}
+
+/* ── Thêm vào cuối style.css ── */
+
+/* Sidebar: session active */
+.hist-item.active {
+    background: var(--pink-300);
+    font-weight: 600;
+}
+
+/* Sidebar: khi chưa có lịch sử */
+.hist-empty {
+    padding: 12px 10px;
+    font-size: 12px;
+    color: var(--pink-500);
+    text-align: center;
+}
+
+/* Sidebar: layout item có nút xóa */
+.hist-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.hist-title {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+/* Nút ✕ xóa từng session */
+.hist-del {
+    flex-shrink: 0;
+    background: none;
+    border: none;
+    color: var(--pink-400);
+    font-size: 11px;
+    padding: 2px 4px;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity .15s, background .15s;
+    line-height: 1;
+}
+
+.hist-item:hover .hist-del {
+    opacity: 1;
+}
+
+.hist-del:hover {
+    background: var(--pink-300);
+    color: var(--accent);
+}
+
+/* Nút xóa tất cả ở cuối sidebar */
+.hist-clear-all {
+    display: block;
+    width: calc(100% - 20px);
+    margin: 8px 10px 10px;
+    padding: 7px;
+    background: none;
+    border: 1px dashed var(--pink-400);
+    border-radius: 8px;
+    color: var(--pink-500);
+    font-size: 11.5px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background .15s, color .15s;
+}
+
+.hist-clear-all:hover {
+    background: var(--pink-200);
+    color: var(--accent);
+}

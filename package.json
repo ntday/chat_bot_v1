@@ -1,19 +1,18 @@
 {
-  "name": "legal-chatbot",
+  "name": "chat_bot_v2_2",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build-index": "node scripts/build_index.js",
+    "start": "node server.js"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "description": "",
   "dependencies": {
-    "@google/generative-ai": "^0.24.1",
-    "cors": "^2.8.6",
+    "@huggingface/transformers": "^4.2.0",
+    "@lancedb/lancedb": "^0.27.2",
     "dotenv": "^17.4.2",
     "express": "^5.2.1"
   }
